@@ -14,9 +14,9 @@
     <p class="lead">Connect with trusted walkers for your beloved dog!</p>
 
     <p>Username</p>
-    <input type="text">
+    <input type="text" v-model="username">
     <p>Password</p>
-    <input type="password"> <br>
+    <input type="password" v-model="password"> <br>
     <button type="button" @click="login()">Log In</button> <br>
 
     <a href="owner-dashboard.html" class="btn btn-outline-primary me-2">Owner Dashboard</a>
