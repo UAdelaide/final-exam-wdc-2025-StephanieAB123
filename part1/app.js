@@ -57,7 +57,7 @@ let db;
     `);
 
     await db.execute(`
-      CREATE TABLE IF NOT EXISTS Dogs (
+      CREATE TABLE IF NOT EXISTS WalkRequests (
         request_id INT AUTO_INCREMENT PRIMARY KEY,
         dog_id INT NOT NULL,
         requested_time DATETIME NOT NULL,
