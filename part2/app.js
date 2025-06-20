@@ -29,7 +29,9 @@ app.post('/login', async (req, res) => {
             [username, password]
         );
 
-        if
+        if (rows.length === 0){
+            return res.render('login', { error: "Invalid"});
+        }
     }
 })
 
