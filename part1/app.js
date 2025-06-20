@@ -114,12 +114,6 @@ let db;
       `);
     }
 
-
-//   catch (err) {
-//     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
-//   }
-// })();
-
     const [dogs] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
         if (dogs[0].count === 0) {
         await db.execute(`
@@ -143,6 +137,10 @@ let db;
             ((SELECT dog_id FROM Dogs WHERE name = 'Gorgeous'), '2025-06-10 10:30:00', 45, 'Beachside Ave', 'open');
         `);
     }
+}catch (err) {
+    console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
+  }
+})();
 
 
 
