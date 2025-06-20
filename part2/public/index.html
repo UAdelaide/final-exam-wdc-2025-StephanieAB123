@@ -58,8 +58,11 @@
               }else{
                 alert('Error! Unknown role!');
               }
+            }else{
+              alert(result.error || 'Login failed!');
             }
-
+          } catch (err){
+            
           }
 
         }
