@@ -44,8 +44,10 @@ app.post('/login', async (req, res) => {
         }else if (rows[0].role === 'walker'){
             res.redirect('/walker');
         }else{
-            res.render()
+            res.render('login', { error: "Unknown role"});
         }
+    }catch (err){
+        co
     }
 })
 
