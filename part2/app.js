@@ -39,6 +39,7 @@ app.post('/login', async (req, res) => {
             role: rows[0].role
         };
 
+        res.json({ role: rows[0].role });
         if(rows[0].role === 'owner'){
             res.redirect('/owner');
         }else if (rows[0].role === 'walker'){
