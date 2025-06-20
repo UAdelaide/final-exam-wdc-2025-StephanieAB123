@@ -47,7 +47,7 @@ app.post('/login', async (req, res) => {
             res.render('login', { error: "Unknown role"});
         }
     }catch (err){
-        co
+        console.error(err);
     }
 })
 
