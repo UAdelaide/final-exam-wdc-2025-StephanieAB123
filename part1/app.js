@@ -126,7 +126,12 @@ let db;
             INSERT INTO Users (username, email, password_hash, role) VALUES
             ('alice123', 'alice@example.com', 'hashed123', 'owner'), 
             ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
-            ('carol123', 'carol@example.com', 'hashed789', 'owner'),
+            ('carol123', 'carol@example.cINSERT INTO Dogs (owner_id, name, size) VALUES
+((SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 'medium'), 
+((SELECT user_id FROM Users WHERE username = 'carol123'), 'Bella', 'small'),
+((SELECT user_id FROM Users WHERE username = 'bobwalker'), 'Taffy', 'large'),  
+((SELECT user_id FROM Users WHERE username = 'emulace'), 'Gorgeous', 'medium'),
+((SELECT user_id FROM Users WHERE username = 'davidjones'), 'Oreo', 'large');om', 'hashed789', 'owner'),
             ('davidjones', 'david@example.com', 'hashed101', 'walker'),
             ('emulace', 'emu@example.com', 'hashed112', 'owner');
         `);
