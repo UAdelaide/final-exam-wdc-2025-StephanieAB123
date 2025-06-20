@@ -6,13 +6,6 @@ const mysql = require('mysql2/promise')
 
 const app = express();
 
-const db = await mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'DogWalkService'  
-});
-
 // Middleware
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
