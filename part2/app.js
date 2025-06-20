@@ -40,13 +40,6 @@ app.post('/login', async (req, res) => {
         };
 
         res.json({ role: rows[0].role });
-        if(rows[0].role === 'owner'){
-            res.redirect('/owner');
-        }else if (rows[0].role === 'walker'){
-            res.redirect('/walker');
-        }else{
-            return res.status(401).json({ error: "Invalid role"});
-        }
     }catch (err){
         console.error(err);
     }
