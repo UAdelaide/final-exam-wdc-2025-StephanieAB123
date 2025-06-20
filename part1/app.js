@@ -191,7 +191,8 @@ app.get('/api/walkers/summary', async (req, res) => {
                 COUNT(DISTINCT wr.request_id) AS completed_walks
             FROM Users u
             LEFT JOIN WalkRatings r ON u.user_id = r.walker_id
-            LEFT JOIN WalkRequests wr ON w
+            LEFT JOIN WalkRequests wr ON wr.request_id = r.request_id AND wr.status = 'completed'
+            
                 `);
         res.json(rows);
     } catch (err) {
