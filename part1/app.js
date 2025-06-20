@@ -143,7 +143,8 @@ let db;
 })();
 
 
-//Route 
+//Route --> /api/dogs
+app.get ('/api/dogs', async (re))
 
 // Route to return books as JSON
 app.get('/', async (req, res) => {
