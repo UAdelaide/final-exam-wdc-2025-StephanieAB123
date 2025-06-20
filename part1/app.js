@@ -146,7 +146,8 @@ let db;
 //Route --> /api/dogs
 app.get ('/api/dogs', async (req, res) => {
     try{
-        const []
+        const [rows] = await db.execute('SELECT * FROM Dogs');
+        res.json(rows);
     }
 })
 
