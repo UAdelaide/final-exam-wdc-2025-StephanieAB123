@@ -42,7 +42,9 @@ app.post('/login', async (req, res) => {
         if(rows[0].role === 'owner'){
             res.redirect('/owner');
         }else if (rows[0].role === 'walker'){
-            res.red
+            res.redirect('/walker');
+        }else{
+            res.render()
         }
     }
 })
