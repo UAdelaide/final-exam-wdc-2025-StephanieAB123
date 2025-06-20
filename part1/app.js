@@ -110,7 +110,7 @@ let db;
         ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
         ('carol123', 'carol@example.com', 'hashed789', 'owner'),
         ('davidjones', 'david@example.com', 'hashed101', 'walker'),
-        ('emulace', 'emu@example.com', 'hashed112', 'owner');
+        ('emulace', 'emu@example.com', 'hashed112', 'owner')
       `);
     }
 
