@@ -155,7 +155,7 @@ app.get('/api/dogs', async (req, res) => {
 
 app.get('/api/walkrequests/open', async (req, res) => {
     try{
-        const [rows] = await db.execute('SELECT * FROM Dogs');
+        const [rows] = await db.execute('SELECT * FROM WalkRequests WHERE status = 'open'');
         res.json(rows);
     } catch (err) {
         res.status(500).json({ error: 'Failed to fetch dogs' });
