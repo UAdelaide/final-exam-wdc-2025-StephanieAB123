@@ -49,7 +49,7 @@ app.post('/login', async (req, res) => {
     }catch (err){
         console.error(err);
     }
-})
+});
 
 // Export the app instead of listening here
 module.exports = app;
