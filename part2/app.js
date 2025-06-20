@@ -42,6 +42,7 @@ app.post('/login', async (req, res) => {
         res.json({ role: rows[0].role });
     }catch (err){
         console.error(err);
+        res.status(500).json({ error: "Wrong."});
     }
 });
 
