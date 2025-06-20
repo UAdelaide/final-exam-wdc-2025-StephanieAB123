@@ -62,9 +62,8 @@
               alert(result.error || 'Login failed!');
             }
           } catch (err){
-            
+            console.error('Error logging in', err);
           }
-
         }
       }
     }).mount('#app');
