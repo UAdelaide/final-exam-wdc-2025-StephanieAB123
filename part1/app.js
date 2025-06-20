@@ -148,6 +148,8 @@ app.get ('/api/dogs', async (req, res) => {
     try{
         const [rows] = await db.execute('SELECT * FROM Dogs');
         res.json(rows);
+    } catch (err) {
+        res.status(500).json({ error: })
     }
 })
 
