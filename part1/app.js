@@ -163,7 +163,10 @@ app.get('/api/dogs', async (req, res) => {
 app.get('/api/walkrequests/open', async (req, res) => {
     try{
         const [rows] = await db.execute(`
-            `);
+            SELECT
+                wr.request_id,
+                d.name AS dog_name,
+                `);
         res.json(rows);
     } catch (err) {
         res.status(500).json({ error: 'Failed to fetch walk requests' });
