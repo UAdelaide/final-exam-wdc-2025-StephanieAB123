@@ -171,7 +171,10 @@ app.get('/api/walkrequests/open', async (req, res) => {
                 wr.location,
                 u.username AS owner_username
             FROM WalkRequests wr
-            JOIN`);
+            JOIN Dogs d on wr.dog_id = d.dog_id
+            JOIN Users u ON d.owner_id = u.user_id
+            WHERE wr.status = 'open'
+        `);
         res.json(rows);
     } catch (err) {
         res.status(500).json({ error: 'Failed to fetch walk requests' });
@@ -180,7 +183,8 @@ app.get('/api/walkrequests/open', async (req, res) => {
 
 app.get('/api/walkers/summary', async (req, res) => {
     try{
-        const [rows] = await db.execute('SELECT * FROM Dogs');
+        const [rows] = await db.execute(`
+            `);
         res.json(rows);
     } catch (err) {
         res.status(500).json({ error: 'Failed to fetch dogs' });
