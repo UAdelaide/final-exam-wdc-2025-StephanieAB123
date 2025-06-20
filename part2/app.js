@@ -30,7 +30,7 @@ app.post('/login', async (req, res) => {
         );
 
         if (rows.length === 0){
-            return res.render('login', { error: "Invalid"});
+            return res.status(401).json({}'login', { error: "Invalid"});
         }
 
         req.session.user = {
