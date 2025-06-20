@@ -192,11 +192,12 @@ app.get('/api/walkers/summary', async (req, res) => {
             FROM Users u
             LEFT JOIN WalkRatings r ON u.user_id = r.walker_id
             LEFT JOIN WalkRequests wr ON wr.request_id = r.request_id AND wr.status = 'completed'
-            
-                `);
+            WHERE u.role = 'walker'
+            GROUP BY u.username
+        `);
         res.json(rows);
     } catch (err) {
-        res.status(500).json({ error: 'Failed to fetch dogs' });
+        res.status(500).json({ error: 'Failed to fetch walker summary' });
     }
 });
 
