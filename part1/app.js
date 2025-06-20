@@ -162,6 +162,15 @@ app.get('/api/walkrequests/open', async (req, res) => {
     }
 });
 
+app.get('/api/walkers/summary', async (req, res) => {
+    try{
+        const [rows] = await db.execute('SELECT * FROM Dogs');
+        res.json(rows);
+    } catch (err) {
+        res.status(500).json({ error: 'Failed to fetch dogs' });
+    }
+});
+
 // Route to return books as JSON
 app.get('/', async (req, res) => {
   try {
