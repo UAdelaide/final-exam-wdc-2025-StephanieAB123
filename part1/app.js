@@ -135,12 +135,12 @@ let db;
     const [walks] = await db.execute('SELECT COUNT(*) AS count FROM WalkRequests');
         if (walks[0].count === 0) {
         await db.execute(`
-            INSERT INTO Dogs (owner_id, name, size) VALUES
-            ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 'medium'),
-            ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Bella', 'small'),
-            ((SELECT user_id FROM Users WHERE username = 'bobwalker'), 'Taffy', 'large'),
-            ((SELECT user_id FROM Users WHERE username = 'emulace'), 'Gorgeous', 'medium'),
-            ((SELECT user_id FROM Users WHERE username = 'davidjones'), 'Oreo', 'large');
+            INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES
+            ((SELECT dog_id FROM Dogs WHERE name = 'Max'), '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
+            ((SELECT dog_id FROM Dogs WHERE name = 'Bella'), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'),
+            ((SELECT dog_id FROM Dogs WHERE name = 'Taffy'), '2025-06-13 10:00:00', ,60 'Malibu Ave', 'open'),
+            ((SELECT dog_id FROM Dogs WHERE name = 'Oreo'), '2025-06-23 10:30:00', 45, 'Lakehouse Ave', 'accepted'),
+            ((SELECT dog_id FROM Dogs WHERE name = 'Gorgeous'), '2025-06-10 10:30:00', 45, 'Beachside Ave', 'open');
         `);
     }
 
