@@ -169,7 +169,9 @@ app.get('/api/walkrequests/open', async (req, res) => {
                 wr.requested_time,
                 wr.duration_minutes,
                 wr.location,
-                u.username AS owner_username`);
+                u.username AS owner_username
+            FROM WalkRequests wr
+            JOIN`);
         res.json(rows);
     } catch (err) {
         res.status(500).json({ error: 'Failed to fetch walk requests' });
