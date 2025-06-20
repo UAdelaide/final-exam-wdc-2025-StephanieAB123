@@ -44,7 +44,7 @@ app.post('/login', async (req, res) => {
         }else if (rows[0].role === 'walker'){
             res.redirect('/walker');
         }else{
-            res.render('login', { error: "Unknown role"});
+            return res.status(401).json({ error: "Invalid role"});
         }
     }catch (err){
         console.error(err);
