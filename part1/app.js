@@ -113,10 +113,12 @@ let db;
         ('emulace', 'emu@example.com', 'hashed112', 'owner');
       `);
     }
-  } catch (err) {
-    console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
-  }
-})();
+
+
+//   catch (err) {
+//     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
+//   }
+// })();
 
     const [dogs] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
         if (users[0].count === 0) {
