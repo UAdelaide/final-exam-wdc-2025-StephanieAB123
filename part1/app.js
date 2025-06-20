@@ -184,7 +184,10 @@ app.get('/api/walkrequests/open', async (req, res) => {
 app.get('/api/walkers/summary', async (req, res) => {
     try{
         const [rows] = await db.execute(`
-            `);
+            SELECT
+                u.username AS walker_username
+                COUNT(r.rating_id) AS total_ratings,
+                `);
         res.json(rows);
     } catch (err) {
         res.status(500).json({ error: 'Failed to fetch dogs' });
