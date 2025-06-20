@@ -82,6 +82,23 @@ let db;
     )
     `);
 
+    await db.execute(`
+      CREATE TABLE IF NOT EXISTS WalkRatings (
+        rating_id INT AUTO_INCREMENT PRIMARY KEY,
+    request_id INT NOT NULL,
+    walker_id INT NOT NULL,
+    owner_id INT NOT NULL,
+    rating INT CHECK (rating BETWEEN 1 AND 5),
+    comments TEXT,
+    rated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (request_id) REFERENCES WalkRequests(request_id),
+    FOREIGN KEY (walker_id) REFERENCES Users(user_id),
+    FOREIGN KEY (owner_id) REFERENCES Users(user_id),
+    CONSTRAINT unique_rating_per_walk UNIQUE (request_id)
+);
+    )
+    `);
+
 
 
 
