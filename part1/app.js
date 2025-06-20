@@ -144,7 +144,11 @@ let db;
 
 
 //Route --> /api/dogs
-app.get ('/api/dogs', async (re))
+app.get ('/api/dogs', async (req, res) => {
+    try{
+        const []
+    }
+})
 
 // Route to return books as JSON
 app.get('/', async (req, res) => {
