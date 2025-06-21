@@ -21,33 +21,35 @@
 
     <a href="owner-dashboard.html" class="btn btn-outline-primary me-2">Owner Dashboard</a>
     <a href="walker-dashboard.html" class="btn btn-outline-success">Walker Dashboard</a>
+
+    <div>
+      <h1>
+        All registered Dogs
+      </h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Dog ID</th>
+            <th>Name</th>
+            <th>Size</th>
+            <th>Owner ID</th>
+            <th>Photo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="dog in dogs" :key="dog.dog_id">
+            <td>{{ dog.dog_id }}</td>
+            <td>{{ dog.dog_name }}</td>
+            <td>{{ dog.size }}</td>
+            <td>{{ dog.owner_id }}</td>
+            <td><img :src="dog.photo" alt="dog photo" class="img-thumbnail" style="width: 50px;"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
-  <div>
-    <h1>
-      All registered Dogs
-    </h1>
-    <table>
-      <thead>
-        <tr>
-          <th>Dog ID</th>
-          <th>Name</th>
-          <th>Size</th>
-          <th>Owner ID</th>
-          <th>Photo</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="dog in dogs" :key="dog.dog_id">
-          <td>{{ dog.dog_id }}</td>
-          <td>{{ dog.dog_name }}</td>
-          <td>{{ dog.size }}</td>
-          <td>{{ dog.owner_id }}</td>
-          <td><img :src="dog.photo" alt="dog photo" class="img-thumbnail" style="width: 50px;"></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+
 
   <script>
     const { createApp } = Vue;
