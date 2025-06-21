@@ -36,7 +36,9 @@ router.get('/me', (req, res) => {
 });
 
 router.get('/mydogs', async (req, res) => {
-  const 
+  try {
+    
+  }
 })
 
 // POST login (dummy version)
