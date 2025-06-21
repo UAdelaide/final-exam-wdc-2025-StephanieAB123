@@ -183,9 +183,9 @@ app.post('logout', (req, res) => {
             return res.status(500).json({ error: 'Failed to log out'});
         }
         res.clearCookie('connect.sid');
-        res.json({ message: })
-    })
-})
+        res.json({ message: 'Log out success! '});
+    });
+});
 
 // Export the app instead of listening here
 module.exports = app;
