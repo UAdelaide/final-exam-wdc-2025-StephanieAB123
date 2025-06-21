@@ -147,11 +147,9 @@ let db;
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
-const apidogs = require('./part1/app');
 
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
-app.use('/api/dogs', apidogs);
 
 app.get('/api/dogs', async (req, res) => {
     try{
