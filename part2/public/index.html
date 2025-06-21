@@ -104,14 +104,15 @@
             const dogsData = await res.json();
             console.log(dogsData);
 
-            const dogsWithPhotos = await Promise.all
-            this.dogs = await Promise.all(
+            const dogsWithPhotos = await Promise.all(
               dogsData.map(async dog => {
                 const photoRes = await fetch('https://dog.ceo/api/breeds/image/random');
                 const photoData = await photoRes.json();
                 return { ...dog, photo: photoData.message };
               })
             );
+
+            this.dogs = dogsWithPhotos;
           } catch (err){
             console.error('Failed to load dogs with photos', err);
           }
