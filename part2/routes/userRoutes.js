@@ -36,7 +36,9 @@ router.get('/me', (req, res) => {
 });
 
 router.get('/mydogs', async (req, res) => {
-  if(!req.session.user || req.session.user.role !== 'owner')
+  if(!req.session.user || req.session.user.role !== 'owner'){
+    return res.status(403).json({ error: 'Not logged in / not owner'});
+  }
 
   try {
     const [dogs] = await db.query(
