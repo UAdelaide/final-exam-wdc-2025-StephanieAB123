@@ -98,6 +98,8 @@
           }catch (err){
             error.value = 'Failed to load dog list'
           }
+
+          console.log('Dogs loaded: ', dogs.value);
         }
 
         async function loadWalks() {
