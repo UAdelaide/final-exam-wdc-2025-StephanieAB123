@@ -177,5 +177,7 @@ app.post('/login', async (req, res) => {
     }
 });
 
+app.post('logout', (req, res) =>)
+
 // Export the app instead of listening here
 module.exports = app;
