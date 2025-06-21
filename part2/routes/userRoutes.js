@@ -50,6 +50,7 @@ router.get('/mydogs', async (req, res) => {
     console.error('Dogs not found', error);
     res.status(500).json({ error: 'no dogs gasp'});
   }
+  console.log('SESSION NAME:', req)
 });
 
 // POST login (dummy version)
