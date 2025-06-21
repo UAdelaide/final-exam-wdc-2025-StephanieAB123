@@ -70,7 +70,6 @@
     const { createApp, ref, onMounted } = Vue;
 
     createApp({
-
       setup() {
         const form = ref({
           dog_id: '',
@@ -91,6 +90,11 @@
             error.value = 'Failed to load walk requests';
           }
         }
+
+      async function logout(){
+        await fetch()
+
+      }
 
         async function submitWalkRequest() {
           try {
