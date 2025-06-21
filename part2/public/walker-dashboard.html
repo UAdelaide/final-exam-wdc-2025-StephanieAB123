@@ -99,7 +99,7 @@
 
         onMounted(() => {
           loadWalkRequests();
-          currentUser.value = await getCurrentUser();
+          currentUser.value = getCurrentUser();
         });
 
         return {
@@ -107,7 +107,8 @@
           message,
           error,
           applyToWalk,
-          logout
+          logout,
+          currentUser
         };
       }
     }).mount('#app');
