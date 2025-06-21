@@ -34,7 +34,7 @@
     </div>
     <p v-else>No available walk requests at the moment.</p>
 
-    <button type="button" @click="logout()"
+    <button type="button" @click="logout()">Log out</button>
   </div>
 
   <script>
@@ -55,6 +55,11 @@
           } catch (err) {
             error.value = err.message;
           }
+        }
+
+        async function logout(){
+        await fetch('/logout', {method: 'POST'});
+        window.location.href = '/index.html';
         }
 
         async function applyToWalk(requestId) {
