@@ -36,6 +36,8 @@ router.get('/me', (req, res) => {
 });
 
 router.get('/mydogs', async (req, res) => {
+  if()
+
   try {
     const [dogs] = await db.query(
       `SELECT dog_id, name FROM Dogs WHERE owner_id = ?`,
