@@ -36,7 +36,7 @@ router.get('/me', (req, res) => {
 });
 
 router.get('/mydogs', async (req, res) => {
-  if()
+  if(!req.session.user || req.session.user.role !== 'owner')
 
   try {
     const [dogs] = await db.query(
