@@ -98,26 +98,26 @@
         }
       },
 
-      async mounted(){
-          try{
-            const res = await fetch('/api/dogs');
-            const dogsData = await res.json();
-            console.log(dogsData);
+    async mounted(){
+        try{
+          const res = await fetch('/api/dogs');
+          const dogsData = await res.json();
+          console.log(dogsData);
 
-            const dogsWithPhotos = await Promise.all(
-              dogsData.map(async dog => {
-                const photoRes = await fetch('https://dog.ceo/api/breeds/image/random');
-                const photoData = await photoRes.json();
-                return { ...dog, photo: photoData.message };
-              })
-            );
+          const dogsWithPhotos = await Promise.all(
+            dogsData.map(async dog => {
+              const photoRes = await fetch('https://dog.ceo/api/breeds/image/random');
+              const photoData = await photoRes.json();
+              return { ...dog, photo: photoData.message };
+            })
+          );
 
-            this.dogs = dogsWithPhotos;
-          } catch (err){
-            console.error('Failed to load dogs with photos', err);
-          }
+          this.dogs = dogsWithPhotos;
+        } catch (err){
+          console.error('Failed to load dogs with photos', err);
         }
-      }).mount('#app');
+      }
+    }).mount('#app');
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
