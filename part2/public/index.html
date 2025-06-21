@@ -112,10 +112,9 @@
 
             this.dogs = dogsWithPhotos;
           } catch (err){
-            console.error('Failed to load dogs with')
+            console.error('Failed to load dogs with photos', err);
           }
         }
-
       }
     }).mount('#app');
   </script>
