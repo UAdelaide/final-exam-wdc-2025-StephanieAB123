@@ -182,6 +182,8 @@ app.post('logout', (req, res) => {
         if(err){
             return res.status(500).json({ error: 'Failed to log out'});
         }
+        res.clearCookie('connect.sid');
+        res.json({ message: })
     })
 })
 
