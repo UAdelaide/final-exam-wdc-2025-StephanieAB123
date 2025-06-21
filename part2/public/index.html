@@ -110,7 +110,9 @@
               })
             );
 
-            this.dogs()
+            this.dogs = dogsWithPhotos;
+          } catch (err){
+            console.error('Failed to load dogs with')
           }
         }
 
